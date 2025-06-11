@@ -33,7 +33,7 @@ public class PayController {
     @PostMapping
     public String applyPayOrder(@RequestBody PayApplyDTO applyDTO){
         if(!PayType.BALANCE.equalsValue(applyDTO.getPayType())){
-            // 目前只支持余额支付
+            // 目前只支持余额支付x
             throw new BizIllegalException("抱歉，目前只支持余额支付");
         }
         return payOrderService.applyPayOrder(applyDTO);
